@@ -2,7 +2,8 @@ package main
 
 import (
 	"context"
-	"xpclient"
+
+	"github.com/vinay-gururaj/xpclient"
 )
 
 func main() {
