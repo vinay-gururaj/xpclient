@@ -31,7 +31,7 @@ func NewClient(host *string) (*Client, error) {
 	}
 
 	c.SessionId = "s:xmHjJr_P3-NlEk2YlaaRDZd2UAPwz6MV.CEqSnSZQzGmFRu1ZjAHI2OtEZvSTrG+p1P9VMiwss2E"
-	c.CsrfToken = "nDmldoDQ-ElCaoyNPPweeTcUlhrShDW8SsfM"
+	c.CsrfToken = "xNxF5Clt-B9ZsYTHBWzAynX6ppON2GxB9ofI"
 
 	return &c, nil
 }
