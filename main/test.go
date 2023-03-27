@@ -9,8 +9,10 @@ import (
 func main() {
 
 	host := "http://localhost:8001"
+	sessionId := "s:xmHjJr_P3-NlEk2YlaaRDZd2UAPwz6MV.CEqSnSZQzGmFRu1ZjAHI2OtEZvSTrG+p1P9VMiwss2E"
+	csrfToken := "xNxF5Clt-B9ZsYTHBWzAynX6ppON2GxB9ofI"
 
-	c, err := xpclient.NewClient(&host)
+	c, err := xpclient.NewClient(&host, &sessionId, &csrfToken)
 
 	if err != nil {
 		panic(err)
