@@ -30,8 +30,8 @@ func NewClient(host *string) (*Client, error) {
 		c.HostURL = *host
 	}
 
-	c.SessionId = "s:y7t-a9HDCylbGotByMJmLiO_SqJSiMkF.WumGNhRdKixyBTW8DKVAgGM4S/0rH6xkbhD1xzqFvC8"
-	c.CsrfToken = "8K3YFdWQ-rPrYa2KGaUpzrDlxGrfG-jd0cDU"
+	c.SessionId = "s:xmHjJr_P3-NlEk2YlaaRDZd2UAPwz6MV.CEqSnSZQzGmFRu1ZjAHI2OtEZvSTrG+p1P9VMiwss2E"
+	c.CsrfToken = "nDmldoDQ-ElCaoyNPPweeTcUlhrShDW8SsfM"
 
 	return &c, nil
 }
