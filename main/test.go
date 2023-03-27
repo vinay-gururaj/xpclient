@@ -7,7 +7,10 @@ import (
 )
 
 func main() {
-	c, err := xpclient.NewClient("http://localhost:8001")
+
+	host := "http://localhost:8001"
+
+	c, err := xpclient.NewClient(&host)
 
 	if err != nil {
 		panic(err)

@@ -19,15 +19,15 @@ type Client struct {
 }
 
 // NewClient -
-func NewClient(host string) (*Client, error) {
+func NewClient(host *string) (*Client, error) {
 	c := Client{
 		HTTPClient: &http.Client{Timeout: 10 * time.Second},
 		// Default Hashicups URL
 		HostURL: HostURL,
 	}
 
-	if host != "" {
-		c.HostURL = host
+	if host != nil {
+		c.HostURL = *host
 	}
 
 	c.SessionId = "s:y7t-a9HDCylbGotByMJmLiO_SqJSiMkF.WumGNhRdKixyBTW8DKVAgGM4S/0rH6xkbhD1xzqFvC8"
