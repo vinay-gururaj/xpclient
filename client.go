@@ -19,7 +19,7 @@ type Client struct {
 }
 
 // NewClient -
-func NewClient(host *string) (*Client, error) {
+func NewClient(host, sessionId, csrfToken *string) (*Client, error) {
 	c := Client{
 		HTTPClient: &http.Client{Timeout: 10 * time.Second},
 		// Default Hashicups URL
@@ -30,8 +30,13 @@ func NewClient(host *string) (*Client, error) {
 		c.HostURL = *host
 	}
 
-	c.SessionId = "s:xmHjJr_P3-NlEk2YlaaRDZd2UAPwz6MV.CEqSnSZQzGmFRu1ZjAHI2OtEZvSTrG+p1P9VMiwss2E"
-	c.CsrfToken = "xNxF5Clt-B9ZsYTHBWzAynX6ppON2GxB9ofI"
+	if sessionId != nil {
+		c.SessionId = *sessionId
+	}
+
+	if csrfToken != nil {
+		c.CsrfToken = *csrfToken
+	}
 
 	return &c, nil
 }
