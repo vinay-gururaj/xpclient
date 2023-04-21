@@ -4,7 +4,7 @@ type XPProject struct {
 	Name           string `json:"name,omitempty"`
 	Description    string `json:"description,omitempty"`
 	Id             string `json:"id,omitempty"`
-	OrganizationId string `json:"organizationId"`
+	OrganizationId string `json:"organizationId,omitempty"`
 }
 
 type SQSConnection struct {
