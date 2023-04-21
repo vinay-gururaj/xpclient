@@ -1,15 +1,38 @@
 package xpclient
 
 type XPProject struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
+	Name           string `json:"name,omitempty"`
+	Description    string `json:"description,omitempty"`
+	Id             string `json:"id,omitempty"`
+	OrganizationId string `json:"organizationId"`
 }
 
 type SQSConnection struct {
-	Name       string `json:"name"`
-	Key        string `json:"key"`
-	Secret     string `json:"secret"`
-	ReadQueue  string `json:"readQueue"`
-	WriteQueue string `json:"writeQueue"`
-	ProjectId  string `json:"projectId"`
+	Name               string `json:"name,omitempty"`
+	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
+	ReadQueue          string `json:"readQueue,omitempty"`
+	WriteQueue         string `json:"writeQueue,omitempty"`
+	AwsRegion          string `json:"awsRegion,omitempty"`
+	ProjectId          string `json:"projectId,omitempty"`
+	EnvironmentId      string `json:"environmentId,omitempty"`
+	ConnectionId       string `json:"connectionId,omitempty"`
+	ConnectorId        string `json:"connectorId,omitempty"`
+	QueueType          string `json:"queueType,omitempty"`
+}
+
+type Environment struct {
+	Name              string   `json:"name,omitempty"`
+	Id                string   `json:"id,omitempty"`
+	ProjectId         string   `json:"projectId,omitempty"`
+	EngineGroupId     string   `json:"engineGroupId,omitempty"`
+	EngineStackId     string   `json:"engineStackId,omitempty"`
+	Clone             string   `json:"clone,omitempty"`
+	ClonedEnvironment string   `json:"clonedEnvironment,omitempty"`
+	Tags              []string `json:"tags,omitempty"`
+}
+
+type Connections struct {
+	ConnectionId string `json:"connectionId,omitempty"`
+	ConnectorId  string `json:"connectorId,omitempty"`
 }
