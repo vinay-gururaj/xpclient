@@ -10,8 +10,8 @@ import (
 func main() {
 
 	host := "http://localhost:8001"
-	sessionId := "s:qjvvBVgdAaZrIlX1BKp_imqYTh-rVesL.8I9id+5UHV5m8aqgr8vkQmhJkx77X/8C9HMOXxhVw+Q"
-	csrfToken := "uQHh7RLw-p8yiBN3OyyWuADI6pB_EvAF-lf8"
+	sessionId := "s:TAhDkUuIT7YNGgyiIYENoGndQvtKjWt1.zb7R+cDqew/t8RCtCtLxyLsAZhN/o3S5mftsG36XIg8"
+	csrfToken := "7RMnruDC-6aOjp1ANOvqEcn-wl2-cdgXIYIU"
 
 	c, err := xpclient.NewClient(&host, &sessionId, &csrfToken)
 
