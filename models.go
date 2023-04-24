@@ -21,6 +21,18 @@ type SQSConnection struct {
 	QueueType          string `json:"queueType,omitempty"`
 }
 
+type S3Connection struct {
+	Name               string `json:"name,omitempty"`
+	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
+	AwsBucket          string `json:"awsBucket,omitempty"`
+	ProjectId          string `json:"projectId,omitempty"`
+	EnvironmentId      string `json:"environmentId,omitempty"`
+	ConnectionId       string `json:"connectionId,omitempty"`
+	ConnectorId        string `json:"connectorId,omitempty"`
+	FileType           string `json:"fileType,omitempty"`
+}
+
 type Environment struct {
 	Name              string   `json:"name,omitempty"`
 	Id                string   `json:"id,omitempty"`

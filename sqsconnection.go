@@ -20,7 +20,6 @@ func (c *Client) CreateSQSConnection(ctx context.Context, sqsConnection SQSConne
 		panic(err)
 	}
 
-	// The code has been commented below as the createSQSConnection method does not return a response
 	body, err := c.doRequest(req)
 
 	if err != nil {
