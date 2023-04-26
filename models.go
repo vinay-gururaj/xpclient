@@ -45,6 +45,9 @@ type Environment struct {
 }
 
 type Connections struct {
-	ConnectionId string `json:"connectionId,omitempty"`
-	ConnectorId  string `json:"connectorId,omitempty"`
+	Name           string `json:"name,omitempty"`
+	ConnectionType string `json:"connectionType,omitempty"`
+	ConnectionId   string `json:"connectionId,omitempty"`
+	ConnectorId    string `json:"connectorId,omitempty"`
+	ProjectId      string `json:"projectId,omitempty"`
 }
