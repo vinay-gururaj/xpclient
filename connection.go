@@ -62,8 +62,8 @@ func (c *Client) UpdateConnection(ctx context.Context, connection Connections) (
 }
 
 // DeleteConnection - Deletes Connection on Kitewheel
-func (c *Client) DeleteConnection(ctx context.Context, s3Connection S3Connection) (connectionId string, err error) {
-	rb, err := json.Marshal(s3Connection)
+func (c *Client) DeleteConnection(ctx context.Context, connection Connections) (connectionId string, err error) {
+	rb, err := json.Marshal(connection)
 	if err != nil {
 		panic(err)
 	}
