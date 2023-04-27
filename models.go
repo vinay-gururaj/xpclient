@@ -22,7 +22,6 @@ type SQSConnection struct {
 }
 
 type S3Connection struct {
-	Name               string `json:"name,omitempty"`
 	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
 	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
 	AwsBucket          string `json:"awsBucket,omitempty"`
