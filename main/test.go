@@ -94,7 +94,7 @@ func main() {
 
 	var returnedSQSConnection xpclient.SQSConnection
 
-	returnedSQSConnection, error = c.CreateSQSConnection(context.Background(), xpclient.SQSConnection{Name: "SQS Connection library", AwsAccessKeyId: "ASIA1234", AwsSecretAccessKey: "PAsswprd", ReadQueue: "read_queue", WriteQueue: "write_queue", AwsRegion: "us-east-1", ProjectId: projectId, EnvironmentId: devEnvironmentId})
+	returnedSQSConnection, error = c.CreateSQSConnection(context.Background(), xpclient.SQSConnection{AwsAccessKeyId: "ASIA1234", AwsSecretAccessKey: "PAsswprd", ReadQueue: "read_queue", WriteQueue: "write_queue", AwsRegion: "us-east-1", ProjectId: projectId, EnvironmentId: devEnvironmentId})
 
 	if error != nil {
 		panic(error)
@@ -108,7 +108,6 @@ func main() {
 
 	time.Sleep(5 * time.Second)
 
-	returnedSQSConnection.Name = "SQS Connection library_Updated"
 	returnedSQSConnection.AwsAccessKeyId = "ASIA2345"
 	returnedSQSConnection.AwsSecretAccessKey = "Password_2"
 	returnedSQSConnection.ReadQueue = "read_queue_2"
@@ -121,7 +120,6 @@ func main() {
 	time.Sleep(5 * time.Second)
 
 	var partialUpdate_nameOnly xpclient.SQSConnection
-	partialUpdate_nameOnly.Name = "SQS Connection library_Updated_2"
 	partialUpdate_nameOnly.ConnectionId = returnedSQSConnection.ConnectionId
 
 	c.UpdateSQSConnection(context.Background(), partialUpdate_nameOnly)
@@ -154,7 +152,6 @@ func main() {
 	var partialWitName xpclient.SQSConnection
 	partialWitName.ConnectorId = returnedSQSConnection.ConnectorId
 	partialWitName.ConnectionId = returnedSQSConnection.ConnectionId
-	partialWitName.Name = "Final name update"
 	partialWitName.AwsRegion = "eu-east-5"
 	partialWitName.WriteQueue = "write_queue_4"
 

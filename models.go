@@ -8,7 +8,6 @@ type XPProject struct {
 }
 
 type SQSConnection struct {
-	Name               string `json:"name,omitempty"`
 	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
 	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
 	ReadQueue          string `json:"readQueue,omitempty"`
