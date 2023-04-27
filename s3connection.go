@@ -63,7 +63,7 @@ func (c *Client) DeleteS3Connection(ctx context.Context, s3Connection S3Connecti
 		panic(err)
 	}
 
-	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/connection", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/s3connection", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
