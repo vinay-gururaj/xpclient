@@ -35,7 +35,7 @@ func (c *Client) CreateSQSConnection(ctx context.Context, sqsConnection SQSConne
 }
 
 // UpdateSQSConnection - Updates SQS Connection parameters
-func (c *Client) UpdateSQSConnection(ctx context.Context, sqsConnection SQSConnection) {
+func (c *Client) UpdateSQSConnection(ctx context.Context, sqsConnection SQSConnection) (connectorId string, err error) {
 	rb, err := json.Marshal(sqsConnection)
 	if err != nil {
 		panic(err)
@@ -46,18 +46,24 @@ func (c *Client) UpdateSQSConnection(ctx context.Context, sqsConnection SQSConne
 		panic(err)
 	}
 
-	// The code has been commented below as the createSQSConnection method does not return a response
 	body, err := c.doRequest(req)
 
 	if err != nil {
 		panic(err)
 	}
 
-	println(body)
+	returnedConnectorId := connectorId
+	err = json.Unmarshal(body, &returnedConnectorId)
+	if err != nil {
+		return "", err
+	}
+
+	return returnedConnectorId, nil
+
 }
 
 // DeleteSQSConnection - Deletes SQS Connection on Kitewheel
-func (c *Client) DeleteSQSConnection(ctx context.Context, sqsConnection SQSConnection) (connectionId string, err error) {
+func (c *Client) DeleteSQSConnection(ctx context.Context, sqsConnection SQSConnection) (connectorId string, err error) {
 	rb, err := json.Marshal(sqsConnection)
 	if err != nil {
 		panic(err)
@@ -75,11 +81,11 @@ func (c *Client) DeleteSQSConnection(ctx context.Context, sqsConnection SQSConne
 
 	println(body)
 
-	xpConnectionId := connectionId
-	err = json.Unmarshal(body, &xpConnectionId)
-
+	returnedConnectorId := connectorId
+	err = json.Unmarshal(body, &returnedConnectorId)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
-	return xpConnectionId, nil
+
+	return returnedConnectorId, nil
 }

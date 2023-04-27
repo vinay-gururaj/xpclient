@@ -35,7 +35,7 @@ func (c *Client) CreateS3Connection(ctx context.Context, s3Connection S3Connecti
 }
 
 // UpdateS3Connection - Updates s3 Connection parameters
-func (c *Client) UpdateS3Connection(ctx context.Context, s3Connection S3Connection) {
+func (c *Client) UpdateS3Connection(ctx context.Context, s3Connection S3Connection) (connectorId string, err error) {
 	rb, err := json.Marshal(s3Connection)
 	if err != nil {
 		panic(err)
@@ -54,16 +54,24 @@ func (c *Client) UpdateS3Connection(ctx context.Context, s3Connection S3Connecti
 	}
 
 	println(body)
+
+	returnedConnectorId := connectorId
+	err = json.Unmarshal(body, &returnedConnectorId)
+	if err != nil {
+		return "", err
+	}
+
+	return returnedConnectorId, nil
 }
 
 // DeleteS3Connection - Deletes s3 Connection on Kitewheel
-func (c *Client) DeleteS3Connection(ctx context.Context, s3Connection S3Connection) (connectionId string, err error) {
+func (c *Client) DeleteS3Connection(ctx context.Context, s3Connection S3Connection) (connectorId string, err error) {
 	rb, err := json.Marshal(s3Connection)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/s3connection", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/s3connection", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -75,11 +83,11 @@ func (c *Client) DeleteS3Connection(ctx context.Context, s3Connection S3Connecti
 
 	println(body)
 
-	xpConnectionId := connectionId
-	err = json.Unmarshal(body, &xpConnectionId)
-
+	returnedConnectorId := connectorId
+	err = json.Unmarshal(body, &returnedConnectorId)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
-	return xpConnectionId, nil
+
+	return returnedConnectorId, nil
 }
