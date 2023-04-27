@@ -63,7 +63,7 @@ func (c *Client) DeleteSQSConnection(ctx context.Context, sqsConnection SQSConne
 		panic(err)
 	}
 
-	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/sqsconnection", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/sqsconnection", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
