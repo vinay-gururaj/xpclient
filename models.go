@@ -49,3 +49,17 @@ type Connections struct {
 	ConnectorId    string `json:"connectorId,omitempty"`
 	ProjectId      string `json:"projectId,omitempty"`
 }
+
+type DBConnection struct {
+	Username       string `json:"username,omitempty"`
+	Password       string `json:"password,omitempty"`
+	Hostname       string `json:"hostname,omitempty"`
+	Port           string `json:"port,omitempty"`
+	Database       string `json:"database,omitempty"`
+	DatabaseType   string `json:"databaseType,omitempty"`
+	IsolationLevel string `json:"isolationLevel,omitempty"`
+	ProjectId      string `json:"projectId,omitempty"`
+	EnvironmentId  string `json:"environmentId,omitempty"`
+	ConnectionId   string `json:"connectionId,omitempty"`
+	ConnectorId    string `json:"connectorId,omitempty"`
+}
