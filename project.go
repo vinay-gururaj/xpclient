@@ -34,6 +34,32 @@ func (c *Client) CreateXPProject(ctx context.Context, xpProject XPProject) (proj
 	return xpProjectId, nil
 }
 
+// CreateXPProject - Create new CreateXPProject
+func (c *Client) GetProject(ctx context.Context, xpProject XPProject) (xpProjectResponse KWProject, err error) {
+	rb, err := json.Marshal(xpProject)
+	if err != nil {
+		panic(err)
+	}
+
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/project", c.HostURL), strings.NewReader(string(rb)))
+	if err != nil {
+		panic(err)
+	}
+
+	body, err := c.doRequest(req)
+	if err != nil {
+		panic(err)
+	}
+
+	xpProjectResp := xpProjectResponse
+	err = json.Unmarshal(body, &xpProjectResp)
+	if err != nil {
+		panic(err)
+	}
+
+	return xpProjectResp, nil
+}
+
 // UpdateXPProject - Updates Project Name on Kitewheel
 func (c *Client) UpdateXPProject(ctx context.Context, xpProject XPProject) (projectId string, err error) {
 	rb, err := json.Marshal(xpProject)
