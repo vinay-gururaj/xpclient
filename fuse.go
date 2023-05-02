@@ -9,7 +9,7 @@ import (
 )
 
 // generateFuseFromProject - Generates a fuse file by reading a kitewheel project
-func (c *Client) generateFuseFromProject(ctx context.Context, xpProject XPProject) (status bool, err error) {
+func (c *Client) GenerateFuseFromProject(ctx context.Context, xpProject XPProject) (status bool, err error) {
 	rb, err := json.Marshal(xpProject)
 	if err != nil {
 		panic(err)
@@ -21,17 +21,21 @@ func (c *Client) generateFuseFromProject(ctx context.Context, xpProject XPProjec
 	}
 
 	body, err := c.doRequest(req)
+	if err != nil {
+		panic(err)
+	}
 
-	err = json.Unmarshal(body, nil)
+	responseStatus := status
+	err = json.Unmarshal(body, &responseStatus)
 	if err != nil {
 		return false, err
 	}
 
-	return true, nil
+	return responseStatus, nil
 }
 
 // generateFuseFromProject - Generates a fuse file by reading a kitewheel project
-func (c *Client) generateProjectFromFuse(ctx context.Context, xpProject XPProject) (status bool, err error) {
+func (c *Client) GenerateProjectFromFuse(ctx context.Context, xpProject XPProject) (status bool, err error) {
 	rb, err := json.Marshal(xpProject)
 	if err != nil {
 		panic(err)
@@ -43,11 +47,15 @@ func (c *Client) generateProjectFromFuse(ctx context.Context, xpProject XPProjec
 	}
 
 	body, err := c.doRequest(req)
+	if err != nil {
+		panic(err)
+	}
 
-	err = json.Unmarshal(body, nil)
+	responseStatus := status
+	err = json.Unmarshal(body, &responseStatus)
 	if err != nil {
 		return false, err
 	}
 
-	return true, nil
+	return responseStatus, nil
 }
