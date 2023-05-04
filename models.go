@@ -56,7 +56,7 @@ type DBConnection struct {
 	Username       string `json:"username,omitempty"`
 	Password       string `json:"password,omitempty"`
 	Hostname       string `json:"hostname,omitempty"`
-	Port           string `json:"port,omitempty"`
+	Port           int    `json:"port,omitempty"`
 	Database       string `json:"database,omitempty"`
 	DatabaseType   string `json:"databaseType,omitempty"`
 	IsolationLevel string `json:"isolationLevel,omitempty"`
@@ -642,11 +642,15 @@ type KWConnections struct {
 }
 
 type Fuse2 struct {
-	Connections  []KWConnections
-	Name         string
-	JourneySteps []KWPrototype
-	Graphs       []KWPrototype
-	JavaScripts  []KWPrototype
+	Connections    []KWConnections
+	SQSConnections []SQSConnection
+	S3Connections  []S3Connection
+	DBConnections  []DBConnection
+	Name           string
+	JourneySteps   []KWPrototype
+	Graphs         []KWPrototype
+	JavaScripts    []KWPrototype
+	ProjectId      string
 }
 
 type KWPrototype struct {
