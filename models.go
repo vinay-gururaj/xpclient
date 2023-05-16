@@ -678,3 +678,33 @@ type KWPrototype struct {
 	JourneyStepType string `json:"journeyStepType,omitempty"`
 	Outcome         string `json:"outcome,omitempty"`
 }
+
+type JavaScript struct {
+	Name           string   `json:"name,omitempty"`
+	Id             string   `json:"id,omitempty"`
+	ProjectId      string   `json:"projectId,omitempty"`
+	Code           string   `json:"code,omitempty"`
+	ArgumentList   []string `json:"argumentList,omitempty"`
+	Tags           []string `json:"tags,omitempty"`
+	SourceScriptId string   `json:"sourceScriptId,omitempty"`
+}
+
+type SimpleGraph struct {
+	Name              string `json:"name,omitempty"`
+	Id                string `json:"id,omitempty"`
+	ProjectId         string `json:"projectId,omitempty"`
+	YamlSourceGraphId string `json:"yamlSourceGraphId,omitempty"`
+	GraphId           string `json:"graphId,omitempty"`
+}
+
+type SimpleNode struct {
+	Name              string `json:"name,omitempty"`
+	Id                string `json:"id,omitempty"`
+	ProjectId         string `json:"projectId,omitempty"`
+	NodeType          string `json:"nodeType,omitempty"`
+	XPosition         string `json:"xPosition,omitempty"`
+	YPosition         string `json:"yPosition,omitempty"`
+	GraphId           string `json:"graphId,omitempty"`
+	SubGraphId        string `json:"subGraphId,omitempty"`
+	YamlSourceGraphId string `json:"yamlSourceGraphId,omitempty"`
+}

@@ -9,13 +9,13 @@ import (
 )
 
 // CreateScripts - Creates Scripts
-func (c *Client) CreateScripts(ctx context.Context, fuse Fuse2) (connectionResponse KWConnections, err error) {
+func (c *Client) CreateScripts(ctx context.Context, fuse Fuse2) (scriptId string, err error) {
 	rb, err := json.Marshal(fuse)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/scripts", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/script", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -26,7 +26,7 @@ func (c *Client) CreateScripts(ctx context.Context, fuse Fuse2) (connectionRespo
 		panic(err)
 	}
 
-	response := connectionResponse
+	response := scriptId
 	err = json.Unmarshal(body, &response)
 	if err != nil {
 		panic(err)
@@ -35,13 +35,13 @@ func (c *Client) CreateScripts(ctx context.Context, fuse Fuse2) (connectionRespo
 }
 
 // UpdateScripts - Updates Scripts
-func (c *Client) UpdateScripts(ctx context.Context, connections KWConnections) (connectionResponse KWConnections, err error) {
-	rb, err := json.Marshal(connections)
+func (c *Client) UpdateScripts(ctx context.Context, script JavaScript) (scriptId string, err error) {
+	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/scripts", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/script", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +53,7 @@ func (c *Client) UpdateScripts(ctx context.Context, connections KWConnections) (
 		panic(err)
 	}
 
-	response := connectionResponse
+	response := scriptId
 	err = json.Unmarshal(body, &response)
 	if err != nil {
 		panic(err)
@@ -62,13 +62,13 @@ func (c *Client) UpdateScripts(ctx context.Context, connections KWConnections) (
 }
 
 // DeleteScripts - Deletes Scripts
-func (c *Client) DeleteScripts(ctx context.Context, connections KWConnections) (connectionResponse KWConnections, err error) {
-	rb, err := json.Marshal(connections)
+func (c *Client) DeleteScripts(ctx context.Context, script JavaScript) (scriptId string, err error) {
+	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/scripts", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/script", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -80,7 +80,7 @@ func (c *Client) DeleteScripts(ctx context.Context, connections KWConnections) (
 
 	println(body)
 
-	xpConnectionId := connectionResponse
+	xpConnectionId := scriptId
 	err = json.Unmarshal(body, &xpConnectionId)
 
 	if err != nil {
@@ -90,13 +90,13 @@ func (c *Client) DeleteScripts(ctx context.Context, connections KWConnections) (
 }
 
 // GetScripts - Fetches Scripts within a project
-func (c *Client) GetScripts(ctx context.Context, xpProject XPProject) (graphResponse Fuse2, err error) {
-	rb, err := json.Marshal(xpProject)
+func (c *Client) GetScripts(ctx context.Context, script JavaScript) (scriptId string, err error) {
+	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/scripts", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/script", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -107,7 +107,7 @@ func (c *Client) GetScripts(ctx context.Context, xpProject XPProject) (graphResp
 		panic(err)
 	}
 
-	response := graphResponse
+	response := scriptId
 	err = json.Unmarshal(body, &response)
 	if err != nil {
 		panic(err)
