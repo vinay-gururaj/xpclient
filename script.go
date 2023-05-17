@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-// CreateScripts - Creates Scripts
-func (c *Client) CreateScripts(ctx context.Context, fuse Fuse2) (scriptId string, err error) {
+// CreateScript - Creates Script
+func (c *Client) CreateScript(ctx context.Context, fuse Fuse2) (scriptId string, err error) {
 	rb, err := json.Marshal(fuse)
 	if err != nil {
 		panic(err)
@@ -34,8 +34,8 @@ func (c *Client) CreateScripts(ctx context.Context, fuse Fuse2) (scriptId string
 	return response, nil
 }
 
-// UpdateScripts - Updates Scripts
-func (c *Client) UpdateScripts(ctx context.Context, script JavaScript) (scriptId string, err error) {
+// UpdateScript - Updates Script
+func (c *Client) UpdateScript(ctx context.Context, script JavaScript) (scriptId string, err error) {
 	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
@@ -61,8 +61,8 @@ func (c *Client) UpdateScripts(ctx context.Context, script JavaScript) (scriptId
 	return response, nil
 }
 
-// DeleteScripts - Deletes Scripts
-func (c *Client) DeleteScripts(ctx context.Context, script JavaScript) (scriptId string, err error) {
+// DeleteScript - Deletes Script
+func (c *Client) DeleteScript(ctx context.Context, script JavaScript) (scriptId string, err error) {
 	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
@@ -89,8 +89,8 @@ func (c *Client) DeleteScripts(ctx context.Context, script JavaScript) (scriptId
 	return xpConnectionId, nil
 }
 
-// GetScripts - Fetches Scripts within a project
-func (c *Client) GetScripts(ctx context.Context, script JavaScript) (scriptId string, err error) {
+// GetScript - Fetches Script within a project
+func (c *Client) GetScript(ctx context.Context, script JavaScript) (scriptId string, err error) {
 	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
