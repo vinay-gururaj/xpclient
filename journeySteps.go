@@ -9,13 +9,13 @@ import (
 )
 
 // CreateJourneySteps - Create new Journey Steps
-func (c *Client) CreateJourneySteps(ctx context.Context, fuse Fuse2) (connectionResponse KWConnections, err error) {
+func (c *Client) CreateJourneyStep(ctx context.Context, fuse Fuse2) (connectionResponse KWConnections, err error) {
 	rb, err := json.Marshal(fuse)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("POST", fmt.Sprintf("%s/journeysteps", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("POST", fmt.Sprintf("%s/journeystep", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -35,13 +35,13 @@ func (c *Client) CreateJourneySteps(ctx context.Context, fuse Fuse2) (connection
 }
 
 // UpdateJourneySteps - Updates Journey Steps
-func (c *Client) UpdateJourneySteps(ctx context.Context, connections KWConnections) (connectionResponse KWConnections, err error) {
+func (c *Client) UpdateJourneyStep(ctx context.Context, connections KWConnections) (connectionResponse KWConnections, err error) {
 	rb, err := json.Marshal(connections)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/journeysteps", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/journeystep", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -61,13 +61,13 @@ func (c *Client) UpdateJourneySteps(ctx context.Context, connections KWConnectio
 }
 
 // DeleteJourneySteps - Deletes Journey Steps on Kitewheel
-func (c *Client) DeleteJourneySteps(ctx context.Context, connections KWConnections) (connectionResponse KWConnections, err error) {
+func (c *Client) DeleteJourneyStep(ctx context.Context, connections KWConnections) (connectionResponse KWConnections, err error) {
 	rb, err := json.Marshal(connections)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/journeysteps", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/journeystep", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
@@ -89,13 +89,13 @@ func (c *Client) DeleteJourneySteps(ctx context.Context, connections KWConnectio
 }
 
 // GetJourneySteps - Fetches Journey Steps within a project
-func (c *Client) GetJourneySteps(ctx context.Context, xpProject XPProject) (journeyStepResponse Fuse2, err error) {
+func (c *Client) GetJourneyStep(ctx context.Context, xpProject XPProject) (journeyStepResponse Fuse2, err error) {
 	rb, err := json.Marshal(xpProject)
 	if err != nil {
 		panic(err)
 	}
 
-	req, err := http.NewRequest("GET", fmt.Sprintf("%s/journeysteps", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/journeystep", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}

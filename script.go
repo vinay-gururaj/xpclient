@@ -9,8 +9,8 @@ import (
 )
 
 // CreateScript - Creates Script
-func (c *Client) CreateScript(ctx context.Context, fuse Fuse2) (scriptId string, err error) {
-	rb, err := json.Marshal(fuse)
+func (c *Client) CreateScript(ctx context.Context, script JavaScript) (scriptId string, err error) {
+	rb, err := json.Marshal(script)
 	if err != nil {
 		panic(err)
 	}
