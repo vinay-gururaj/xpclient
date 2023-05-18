@@ -1,6 +1,10 @@
 package xpclient
 
-import "time"
+import (
+	"time"
+
+	"github.com/hashicorp/terraform-plugin-framework/types"
+)
 
 type XPProject struct {
 	Name           string `json:"name,omitempty"`
@@ -680,13 +684,13 @@ type KWPrototype struct {
 }
 
 type JavaScript struct {
-	Name         string   `json:"name,omitempty"`
-	Id           string   `json:"id,omitempty"`
-	ProjectId    string   `json:"projectId,omitempty"`
-	Code         string   `json:"code,omitempty"`
-	ArgumentList []string `json:"argumentList,omitempty"`
+	Name         string     `json:"name,omitempty"`
+	Id           string     `json:"id,omitempty"`
+	ProjectId    string     `json:"projectId,omitempty"`
+	Code         string     `json:"code,omitempty"`
+	ArgumentList types.List `json:"argumentList,omitempty"`
 	// ArgumentList string `json:"argumentList,omitempty"`
-	Tags []string `json:"tags,omitempty"`
+	Tags types.List `json:"tags,omitempty"`
 	// Tags           string `json:"tags,omitempty"`
 	SourceScriptId string `json:"sourceScriptId,omitempty"`
 }
