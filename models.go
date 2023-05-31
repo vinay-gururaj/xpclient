@@ -9,7 +9,7 @@ type XPProject struct {
 	Description         string `json:"description,omitempty"`
 	Id                  string `json:"id,omitempty"`
 	OrganizationId      string `json:"organizationId,omitempty"`
-	YamlSourceProjectId string `json:"YamlSourceConnectionId"`
+	YamlSourceProjectId string `json:"YamlSourceProjectId"`
 }
 
 type SQSConnection struct {
