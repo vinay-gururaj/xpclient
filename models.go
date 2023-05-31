@@ -5,67 +5,77 @@ import (
 )
 
 type XPProject struct {
-	Name           string `json:"name,omitempty"`
-	Description    string `json:"description,omitempty"`
-	Id             string `json:"id,omitempty"`
-	OrganizationId string `json:"organizationId,omitempty"`
+	Name                string `json:"name,omitempty"`
+	Description         string `json:"description,omitempty"`
+	Id                  string `json:"id,omitempty"`
+	OrganizationId      string `json:"organizationId,omitempty"`
+	YamlSourceProjectId string `json:"YamlSourceConnectionId"`
 }
 
 type SQSConnection struct {
-	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
-	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
-	ReadQueue          string `json:"readQueue,omitempty"`
-	WriteQueue         string `json:"writeQueue,omitempty"`
-	AwsRegion          string `json:"awsRegion,omitempty"`
-	ProjectId          string `json:"projectId,omitempty"`
-	EnvironmentId      string `json:"environmentId,omitempty"`
-	ConnectionId       string `json:"connectionId,omitempty"`
-	ConnectorId        string `json:"connectorId,omitempty"`
-	QueueType          string `json:"queueType,omitempty"`
+	AwsAccessKeyId         string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey     string `json:"awsSecretAccessKey,omitempty"`
+	ReadQueue              string `json:"readQueue,omitempty"`
+	WriteQueue             string `json:"writeQueue,omitempty"`
+	AwsRegion              string `json:"awsRegion,omitempty"`
+	ProjectId              string `json:"projectId,omitempty"`
+	EnvironmentId          string `json:"environmentId,omitempty"`
+	ConnectionId           string `json:"connectionId,omitempty"`
+	ConnectorId            string `json:"connectorId,omitempty"`
+	QueueType              string `json:"queueType,omitempty"`
+	YamlSourceConnectionId string `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
 }
 
 type S3Connection struct {
-	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
-	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
-	AwsBucket          string `json:"awsBucket,omitempty"`
-	ProjectId          string `json:"projectId,omitempty"`
-	EnvironmentId      string `json:"environmentId,omitempty"`
-	ConnectionId       string `json:"connectionId,omitempty"`
-	ConnectorId        string `json:"connectorId,omitempty"`
-	FileType           string `json:"fileType,omitempty"`
+	AwsAccessKeyId         string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey     string `json:"awsSecretAccessKey,omitempty"`
+	AwsBucket              string `json:"awsBucket,omitempty"`
+	ProjectId              string `json:"projectId,omitempty"`
+	EnvironmentId          string `json:"environmentId,omitempty"`
+	ConnectionId           string `json:"connectionId,omitempty"`
+	ConnectorId            string `json:"connectorId,omitempty"`
+	FileType               string `json:"fileType,omitempty"`
+	YamlSourceConnectionId string `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
 }
 
 type Environment struct {
-	Name              string   `json:"name,omitempty"`
-	Id                string   `json:"id,omitempty"`
-	ProjectId         string   `json:"projectId,omitempty"`
-	EngineGroupId     string   `json:"engineGroupId,omitempty"`
-	EngineStackId     string   `json:"engineStackId,omitempty"`
-	Clone             string   `json:"clone,omitempty"`
-	ClonedEnvironment string   `json:"clonedEnvironment,omitempty"`
-	Tags              []string `json:"tags,omitempty"`
+	Name                    string   `json:"name,omitempty"`
+	Id                      string   `json:"id,omitempty"`
+	ProjectId               string   `json:"projectId,omitempty"`
+	EngineGroupId           string   `json:"engineGroupId,omitempty"`
+	EngineStackId           string   `json:"engineStackId,omitempty"`
+	Clone                   string   `json:"clone,omitempty"`
+	ClonedEnvironment       string   `json:"clonedEnvironment,omitempty"`
+	Tags                    []string `json:"tags,omitempty"`
+	YamlSourceEnvironmentId string   `json:"YamlSourceEnvironmentId"`
 }
 
 type Connections struct {
-	Name           string `json:"name,omitempty"`
-	ConnectionType string `json:"connectionType,omitempty"`
-	ConnectionId   string `json:"connectionId,omitempty"`
-	ConnectorId    string `json:"connectorId,omitempty"`
-	ProjectId      string `json:"projectId,omitempty"`
+	Name                   string `json:"name,omitempty"`
+	ConnectionType         string `json:"connectionType,omitempty"`
+	ConnectionId           string `json:"connectionId,omitempty"`
+	ConnectorId            string `json:"connectorId,omitempty"`
+	ProjectId              string `json:"projectId,omitempty"`
+	YamlSourceConnectionId string `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
 }
 
 type DBConnection struct {
-	Username       string `json:"username,omitempty"`
-	Password       string `json:"password,omitempty"`
-	Hostname       string `json:"hostname,omitempty"`
-	Port           int    `json:"port,omitempty"`
-	Database       string `json:"database,omitempty"`
-	DatabaseType   string `json:"databaseType,omitempty"`
-	IsolationLevel string `json:"isolationLevel,omitempty"`
-	ProjectId      string `json:"projectId,omitempty"`
-	EnvironmentId  string `json:"environmentId,omitempty"`
-	ConnectionId   string `json:"connectionId,omitempty"`
-	ConnectorId    string `json:"connectorId,omitempty"`
+	Username               string `json:"username,omitempty"`
+	Password               string `json:"password,omitempty"`
+	Hostname               string `json:"hostname,omitempty"`
+	Port                   int    `json:"port,omitempty"`
+	Database               string `json:"database,omitempty"`
+	DatabaseType           string `json:"databaseType,omitempty"`
+	IsolationLevel         string `json:"isolationLevel,omitempty"`
+	ProjectId              string `json:"projectId,omitempty"`
+	EnvironmentId          string `json:"environmentId,omitempty"`
+	ConnectionId           string `json:"connectionId,omitempty"`
+	ConnectorId            string `json:"connectorId,omitempty"`
+	YamlSourceConnectionId string `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
 }
 
 type KWProject struct {
@@ -702,15 +712,16 @@ type SimpleGraph struct {
 }
 
 type SimpleNode struct {
-	Name              string `json:"name,omitempty"`
-	Id                string `json:"id,omitempty"`
-	ProjectId         string `json:"projectId,omitempty"`
-	NodeType          string `json:"nodeType,omitempty"`
-	XPosition         string `json:"xPosition,omitempty"`
-	YPosition         string `json:"yPosition,omitempty"`
-	GraphId           string `json:"graphId,omitempty"`
-	SubGraphId        string `json:"subGraphId,omitempty"`
-	YamlSourceGraphId string `json:"yamlSourceGraphId,omitempty"`
+	Name                  string `json:"name,omitempty"`
+	Id                    string `json:"id,omitempty"`
+	ProjectId             string `json:"projectId,omitempty"`
+	NodeType              string `json:"nodeType,omitempty"`
+	XPosition             string `json:"xPosition,omitempty"`
+	YPosition             string `json:"yPosition,omitempty"`
+	GraphId               string `json:"graphId,omitempty"`
+	SubGraphId            string `json:"subGraphId,omitempty"`
+	YamlSourceGraphId     string `json:"yamlSourceGraphId,omitempty"`
+	YamlSourcePrototypeId string `json:"yamlSourcePrototypeId,omitempty"`
 }
 
 type QueueAdapter struct {
