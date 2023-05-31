@@ -712,3 +712,49 @@ type SimpleNode struct {
 	SubGraphId        string `json:"subGraphId,omitempty"`
 	YamlSourceGraphId string `json:"yamlSourceGraphId,omitempty"`
 }
+
+type QueueAdapter struct {
+	Name                         string   `json:"name,omitempty"`
+	Id                           string   `json:"id,omitempty"`
+	ProjectId                    string   `json:"projectId,omitempty"`
+	ConnectionId                 string   `json:"connectionId,omitempty"`
+	Action                       string   `json:"action,omitempty"`
+	DataSourceReferenceType      string   `json:"dataSourceReferenceType,omitempty"`
+	DataSourceKeys               []string `json:"dataSourceKeys,omitempty"`
+	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
+	GraphId                      string   `json:"graphId,omitempty"`
+	SubGraphId                   string   `json:"subGraphId,omitempty"`
+	YamlSourcePrototypeId        string   `json:"yamlSourcePrototypeId,omitempty"`
+}
+
+type FileAdapter struct {
+	Name                    string   `json:"name,omitempty"`
+	Id                      string   `json:"id,omitempty"`
+	ProjectId               string   `json:"projectId,omitempty"`
+	ConnectionId            string   `json:"connectionId,omitempty"`
+	Action                  string   `json:"action,omitempty"`
+	DataSourceReferenceType string   `json:"dataSourceReferenceType,omitempty"`
+	DataSourceKeys          []string `json:"dataSourceKeys,omitempty"`
+	FileDataReferenceType   string   `json:"fileDataReferenceType,omitempty"`
+	FilenameKeys            []string `json:"filenameKeys,omitempty"`
+	GraphId                 string   `json:"graphId,omitempty"`
+	SubGraphId              string   `json:"subGraphId,omitempty"`
+	YamlSourcePrototypeId   string   `json:"yamlSourcePrototypeId,omitempty"`
+}
+
+type DatabaseAdapter struct {
+	Name                         string   `json:"name,omitempty"`
+	Id                           string   `json:"id,omitempty"`
+	ProjectId                    string   `json:"projectId,omitempty"`
+	ConnectionId                 string   `json:"connectionId,omitempty"`
+	Action                       string   `json:"action,omitempty"`
+	ActionParameters             []string `json:"actionParameters,omitempty"`
+	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
+	Query                        string   `json:"query,omitempty"`
+	QueryParameters              []string `json:"queryParameters,omitempty"`
+	GraphId                      string   `json:"graphId,omitempty"`
+	SubGraphId                   string   `json:"subGraphId,omitempty"`
+	YamlSourcePrototypeId        string   `json:"yamlSourcePrototypeId,omitempty"`
+}
