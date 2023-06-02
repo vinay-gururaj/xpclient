@@ -712,16 +712,16 @@ type SimpleGraph struct {
 }
 
 type SimpleNode struct {
-	Name                  string `json:"name,omitempty"`
-	Id                    string `json:"id,omitempty"`
-	ProjectId             string `json:"projectId,omitempty"`
-	NodeType              string `json:"nodeType,omitempty"`
-	XPosition             string `json:"xPosition,omitempty"`
-	YPosition             string `json:"yPosition,omitempty"`
-	GraphId               string `json:"graphId,omitempty"`
-	SubGraphId            string `json:"subGraphId,omitempty"`
-	YamlSourceGraphId     string `json:"yamlSourceGraphId,omitempty"`
-	YamlSourcePrototypeId string `json:"yamlSourcePrototypeId,omitempty"`
+	Name              string `json:"name,omitempty"`
+	Id                string `json:"id,omitempty"`
+	ProjectId         string `json:"projectId,omitempty"`
+	NodeType          string `json:"nodeType,omitempty"`
+	XPosition         string `json:"xPosition,omitempty"`
+	YPosition         string `json:"yPosition,omitempty"`
+	GraphId           string `json:"graphId,omitempty"`
+	SourceGraphId     string `json:"sourceGraphId,omitempty"`
+	SourcePrototypeId string `json:"sourcePrototypeId,omitempty"`
+	TargetPrototypeId string `json:"targetPrototypeId,omitempty"`
 }
 
 type QueueAdapter struct {
