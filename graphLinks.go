@@ -9,7 +9,7 @@ import (
 )
 
 // CreateGraphNodeLink - Create GraphNodeLink
-func (c *Client) CreateGraphNodeLinkLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
+func (c *Client) CreateGraphNodeLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
 	rb, err := json.Marshal(graphNodeLink)
 	if err != nil {
 		panic(err)
@@ -35,7 +35,7 @@ func (c *Client) CreateGraphNodeLinkLink(ctx context.Context, graphNodeLink Grap
 }
 
 // UpdateGraphNodeLink - Updates GraphNodeLink
-func (c *Client) UpdateGraphNodeLinkLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
+func (c *Client) UpdateGraphNodeLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
 	rb, err := json.Marshal(graphNodeLink)
 	if err != nil {
 		panic(err)
@@ -62,7 +62,7 @@ func (c *Client) UpdateGraphNodeLinkLink(ctx context.Context, graphNodeLink Grap
 }
 
 // DeleteGraphNodeLink - Deletes GraphNodeLink
-func (c *Client) DeleteGraphNodeLinkLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
+func (c *Client) DeleteGraphNodeLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
 	rb, err := json.Marshal(graphNodeLink)
 	if err != nil {
 		panic(err)
@@ -90,7 +90,7 @@ func (c *Client) DeleteGraphNodeLinkLink(ctx context.Context, graphNodeLink Grap
 }
 
 // GetGraphNodeLink - Fetches Graph Node Link details
-func (c *Client) GetGraphNodeLinkLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
+func (c *Client) GetGraphNodeLink(ctx context.Context, graphNodeLink GraphLink) (graphNodeLinkId string, err error) {
 	rb, err := json.Marshal(graphNodeLink)
 	if err != nil {
 		panic(err)
