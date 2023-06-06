@@ -722,6 +722,20 @@ type SimpleNode struct {
 	SourceGraphId     string `json:"sourceGraphId,omitempty"`
 	SourcePrototypeId string `json:"sourcePrototypeId,omitempty"`
 	TargetPrototypeId string `json:"targetPrototypeId,omitempty"`
+	StartNode         bool   `json:"startNode,omitempty"`
+}
+
+type GraphLink struct {
+	Name                             string `json:"name,omitempty"`
+	Id                               string `json:"id,omitempty"`
+	LinkType                         string `json:"linkType,omitempty"`
+	LinkFromNodeInstanceId           string `json:"linkFromNodeInstanceId,omitempty"`
+	YamlSourceLinkFromNodeInstanceId string `json:"yamlSourceLinkFromNodeInstanceId,omitempty"`
+	NextNodeInstanceId               string `json:"nextNodeInstanceId,omitempty"`
+	YamlSourceNextNodeInstanceId     string `json:"yamlSourceNextNodeInstanceId,omitempty"`
+	Condition                        string `json:"condition,omitempty"`
+	Description                      string `json:"description,omitempty"`
+	Mode                             string `json:"mode,omitempty"`
 }
 
 type QueueAdapter struct {
