@@ -729,6 +729,8 @@ type GraphLink struct {
 	Name                             string `json:"name,omitempty"`
 	Id                               string `json:"id,omitempty"`
 	LinkType                         string `json:"linkType,omitempty"`
+	GraphId                          string `json:"graphId,omitempty"`
+	SourceGraphId                    string `json:"sourceGraphId,omitempty"`
 	LinkFromNodeInstanceId           string `json:"linkFromNodeInstanceId,omitempty"`
 	YamlSourceLinkFromNodeInstanceId string `json:"yamlSourceLinkFromNodeInstanceId,omitempty"`
 	NextNodeInstanceId               string `json:"nextNodeInstanceId,omitempty"`
