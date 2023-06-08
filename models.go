@@ -728,6 +728,7 @@ type SimpleNode struct {
 type GraphLink struct {
 	Name                             string `json:"name,omitempty"`
 	Id                               string `json:"id,omitempty"`
+	YamlSourceLinkId                 string `json:"yamlSourceLinkId"`
 	LinkType                         string `json:"linkType,omitempty"`
 	GraphId                          string `json:"graphId,omitempty"`
 	SourceGraphId                    string `json:"sourceGraphId,omitempty"`
