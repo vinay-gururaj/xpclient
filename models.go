@@ -40,6 +40,24 @@ type S3Connection struct {
 	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
 }
 
+type APIConnection struct {
+	Endpoint               string `json:"endpoint,omitempty"`
+	SignatureService       string `json:"signatureService,omitempty"`
+	SignatureRegion        string `json:"signatureRegion,omitempty"`
+	AwsAccessKeyId         string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey     string `json:"awsSecretAccessKey,omitempty"`
+	MutualAuth             string `json:"mutualAuth,omitempty"`
+	AwsSignatureEnabled    string `json:"awsSignatureEnabled,omitempty"`
+	QueryParams            string `json:"queryParams,omitempty"`
+	HeaderParams           string `json:"headerParams,omitempty"`
+	ProjectId              string `json:"projectId,omitempty"`
+	EnvironmentId          string `json:"environmentId,omitempty"`
+	ConnectionId           string `json:"connectionId,omitempty"`
+	ConnectorId            string `json:"connectorId,omitempty"`
+	YamlSourceConnectionId string `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
+}
+
 type Environment struct {
 	Name                    string   `json:"name,omitempty"`
 	Id                      string   `json:"id,omitempty"`
