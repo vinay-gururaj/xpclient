@@ -46,8 +46,8 @@ type APIConnection struct {
 	SignatureRegion        string `json:"signatureRegion,omitempty"`
 	AwsAccessKeyId         string `json:"awsAccessKeyId,omitempty"`
 	AwsSecretAccessKey     string `json:"awsSecretAccessKey,omitempty"`
-	MutualAuth             string `json:"mutualAuth,omitempty"`
-	AwsSignatureEnabled    string `json:"awsSignatureEnabled,omitempty"`
+	MutualAuth             bool   `json:"mutualAuth,omitempty"`
+	AwsSignatureEnabled    bool   `json:"awsSignatureEnabled,omitempty"`
 	QueryParams            string `json:"queryParams,omitempty"`
 	HeaderParams           string `json:"headerParams,omitempty"`
 	ProjectId              string `json:"projectId,omitempty"`
