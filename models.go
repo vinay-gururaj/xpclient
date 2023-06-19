@@ -730,23 +730,32 @@ type SimpleGraph struct {
 }
 
 type SimpleNode struct {
-	Name                         string   `json:"name,omitempty"`
-	Id                           string   `json:"id,omitempty"`
-	ProjectId                    string   `json:"projectId,omitempty"`
-	NodeType                     string   `json:"nodeType,omitempty"`
-	XPosition                    string   `json:"xPosition,omitempty"`
-	YPosition                    string   `json:"yPosition,omitempty"`
-	GraphId                      string   `json:"graphId,omitempty"`
-	SourceGraphId                string   `json:"sourceGraphId,omitempty"`
-	SourcePrototypeId            string   `json:"sourcePrototypeId,omitempty"`
-	TargetPrototypeId            string   `json:"targetPrototypeId,omitempty"`
-	DataSourceReferenceType      string   `json:"dataSourceReferenceType,omitempty"`
-	DataSourceKeys               []string `json:"dataSourceKeys,omitempty"`
-	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
-	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
-	DataSourceValue              string   `json:"dataSourceValue,omitempty"`
-	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
-	StartNode                    bool     `json:"startNode,omitempty"`
+	Name                         string         `json:"name,omitempty"`
+	Id                           string         `json:"id,omitempty"`
+	ProjectId                    string         `json:"projectId,omitempty"`
+	NodeType                     string         `json:"nodeType,omitempty"`
+	XPosition                    string         `json:"xPosition,omitempty"`
+	YPosition                    string         `json:"yPosition,omitempty"`
+	GraphId                      string         `json:"graphId,omitempty"`
+	SourceGraphId                string         `json:"sourceGraphId,omitempty"`
+	SourcePrototypeId            string         `json:"sourcePrototypeId,omitempty"`
+	TargetPrototypeId            string         `json:"targetPrototypeId,omitempty"`
+	DataSourceReferenceType      string         `json:"dataSourceReferenceType,omitempty"`
+	DataSourceKeys               []string       `json:"dataSourceKeys,omitempty"`
+	DataDestinationReferenceType string         `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string       `json:"dataDestinationKeys,omitempty"`
+	DataSourceValue              string         `json:"dataSourceValue,omitempty"`
+	DataDestinationValue         string         `json:"dataDestinationValue,omitempty"`
+	StartNode                    bool           `json:"startNode,omitempty"`
+	NodeArguments                []NodeArgument `json:"nodeArguments"`
+}
+
+type NodeArgument struct {
+	ArgDataKeys          []string `json:"argDataKeys"`
+	ArgDataReferenceType string   `json:"argDataReferenceType"`
+	ArgDataValue         string   `json:"argDataValue"`
+	ArgName              string   `json:"argName"`
+	NodeId               string   `json:"nodeId"`
 }
 
 type GraphLink struct {
