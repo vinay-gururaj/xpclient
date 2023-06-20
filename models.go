@@ -722,12 +722,23 @@ type JavaScript struct {
 }
 
 type SimpleGraph struct {
-	Name              string `json:"name,omitempty"`
-	Id                string `json:"id,omitempty"`
-	ProjectId         string `json:"projectId,omitempty"`
-	YamlSourceGraphId string `json:"yamlSourceGraphId,omitempty"`
-	GraphId           string `json:"graphId,omitempty"`
+	Name              string           `json:"name,omitempty"`
+	Id                string           `json:"id,omitempty"`
+	ProjectId         string           `json:"projectId,omitempty"`
+	YamlSourceGraphId string           `json:"yamlSourceGraphId,omitempty"`
+	GraphId           string           `json:"graphId,omitempty"`
+	GraphParameters   []GraphParameter `json:"graphParameters"`
 }
+
+type GraphParameter struct {
+	ParameterDataKeys          []string `json:"parameterDataKeys"`
+	ParameterDataReferenceType string   `json:"parameterDataReferenceType"`
+	ParameterDataValue         string   `json:"parameterDataValue"`
+	ParameterName              string   `json:"parameterName"`
+	GraphId                    string   `json:"graphId"`
+}
+
+type GraphParameters []GraphParameter
 
 type SimpleNode struct {
 	Name                         string         `json:"name,omitempty"`
