@@ -841,6 +841,8 @@ type WebServiceAdapter struct {
 	Method                          string            `json:"method,omitempty"`
 	Headers                         map[string]string `json:"headers,omitempty"`
 	Parameters                      []GraphParameter  `json:"parameters,omitempty"`
+	DataSourceReferenceType         string            `json:"dataSourceReferenceType,omitempty"`
+	DataSourceKeys                  []string          `json:"dataSourceKeys,omitempty"`
 	DataDestinationReferenceType    string            `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys             []string          `json:"dataDestinationKeys,omitempty"`
 	ResponseHeaderDataReferenceType string            `json:"responseHeaderDataReferenceType,omitempty"`
