@@ -848,6 +848,8 @@ type WebServiceAdapter struct {
 	HttpStatusCodeDataReferenceType string           `json:"httpStatusCodeDataReferenceType,omitempty"`
 	HttpStatusCodeDataKeys          []string         `json:"httpStatusCodeDataKeys,omitempty"`
 	UrlSegment                      string           `json:"urlSegment,omitempty"`
+	RawRequest                      bool             `json:"rawRequest"`
+	RawResponse                     bool             `json:"rawResponse"`
 	GraphId                         string           `json:"graphId,omitempty"`
 	SubGraphId                      string           `json:"subGraphId,omitempty"`
 	YamlSourcePrototypeId           string           `json:"yamlSourcePrototypeId,omitempty"`
