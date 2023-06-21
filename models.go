@@ -834,21 +834,21 @@ type DatabaseAdapter struct {
 }
 
 type WebServiceAdapter struct {
-	Name                            string   `json:"name,omitempty"`
-	Id                              string   `json:"id,omitempty"`
-	ProjectId                       string   `json:"projectId,omitempty"`
-	ConnectionId                    string   `json:"connectionId,omitempty"`
-	Method                          string   `json:"method,omitempty"`
-	Headers                         string   `json:"headers,omitempty"`
-	Parameters                      string   `json:"parameters,omitempty"`
-	DataDestinationReferenceType    string   `json:"dataDestinationReferenceType,omitempty"`
-	DataDestinationKeys             []string `json:"dataDestinationKeys,omitempty"`
-	ResponseHeaderDataReferenceType string   `json:"responseHeaderDataReferenceType,omitempty"`
-	ResponseHeaderDataKeys          []string `json:"responseHeaderDataKeys,omitempty"`
-	HttpStatusCodeDataReferenceType string   `json:"httpStatusCodeDataReferenceType,omitempty"`
-	HttpStatusCodeDataKeys          []string `json:"httpStatusCodeDataKeys,omitempty"`
-	UrlSegment                      string   `json:"urlSegment,omitempty"`
-	GraphId                         string   `json:"graphId,omitempty"`
-	SubGraphId                      string   `json:"subGraphId,omitempty"`
-	YamlSourcePrototypeId           string   `json:"yamlSourcePrototypeId,omitempty"`
+	Name                            string           `json:"name,omitempty"`
+	Id                              string           `json:"id,omitempty"`
+	ProjectId                       string           `json:"projectId,omitempty"`
+	ConnectionId                    string           `json:"connectionId,omitempty"`
+	Method                          string           `json:"method,omitempty"`
+	Headers                         string           `json:"headers,omitempty"`
+	Parameters                      []GraphParameter `json:"parameters,omitempty"`
+	DataDestinationReferenceType    string           `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys             []string         `json:"dataDestinationKeys,omitempty"`
+	ResponseHeaderDataReferenceType string           `json:"responseHeaderDataReferenceType,omitempty"`
+	ResponseHeaderDataKeys          []string         `json:"responseHeaderDataKeys,omitempty"`
+	HttpStatusCodeDataReferenceType string           `json:"httpStatusCodeDataReferenceType,omitempty"`
+	HttpStatusCodeDataKeys          []string         `json:"httpStatusCodeDataKeys,omitempty"`
+	UrlSegment                      string           `json:"urlSegment,omitempty"`
+	GraphId                         string           `json:"graphId,omitempty"`
+	SubGraphId                      string           `json:"subGraphId,omitempty"`
+	YamlSourcePrototypeId           string           `json:"yamlSourcePrototypeId,omitempty"`
 }
