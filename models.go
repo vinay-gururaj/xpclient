@@ -866,3 +866,11 @@ type WebServiceAdapter struct {
 	SubGraphId                      string            `json:"subGraphId,omitempty"`
 	YamlSourcePrototypeId           string            `json:"yamlSourcePrototypeId,omitempty"`
 }
+
+type ProjectSchema struct {
+	Project struct {
+		ProjectId     string      `json:"projectId,omitempty"`
+		Schema        interface{} `json:"schema,omitempty"`
+		ProfileSchema interface{} `json:"profileSchema,omitempty"`
+	} `json:"project"`
+}
