@@ -870,6 +870,7 @@ type WebServiceAdapter struct {
 type ProjectSchema struct {
 	Project struct {
 		ProjectId     string `json:"projectId,omitempty"`
+		SchemaType    string `json:"schemaType"`
 		Schema        string `json:"schema,omitempty"`
 		ProfileSchema string `json:"profileSchema,omitempty"`
 	} `json:"project"`
