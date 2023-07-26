@@ -875,3 +875,29 @@ type ProjectSchema struct {
 		ProfileSchema string `json:"profileSchema,omitempty"`
 	} `json:"project"`
 }
+
+type BatchConnection struct {
+	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
+	AwsBucket          string `json:"awsBucket,omitempty"`
+	AwsRegion          string `json:"awsRegion,omitempty"`
+	ProjectId          string `json:"projectId,omitempty"`
+	EnvironmentId      string `json:"environmentId,omitempty"`
+	ConnectionId       string `json:"connectionId,omitempty"`
+	ConnectorId        string `json:"connectorId,omitempty"`
+	FileType           string `json:"fileType,omitempty"`
+}
+
+type KafkaConnection struct {
+	UserName               string   `json:"userName,omitempty"`
+	Password               string   `json:"password,omitempty"`
+	ConnectionRequiredName string   `json:"connectionRequiredName,omitempty"`
+	Algorithm              string   `json:"algorithm,omitempty"`
+	ProjectId              string   `json:"projectId,omitempty"`
+	Brokers                []string `json:"brokers,omitempty"`
+	Topics                 []string `json:"topics,omitempty"`
+	EnvironmentId          string   `json:"environmentId,omitempty"`
+	ConnectionId           string   `json:"connectionId,omitempty"`
+	ConnectorId            string   `json:"connectorId,omitempty"`
+	KafkaConnectionId      string   `json:"kafkaConnectionId,omitempty"`
+}
