@@ -71,7 +71,7 @@ func (c *Client) DeleteBatchConnection(ctx context.Context, batchConnection Batc
 		panic(err)
 	}
 
-	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/Batchconnection", c.HostURL), strings.NewReader(string(rb)))
+	req, err := http.NewRequest("DELETE", fmt.Sprintf("%s/batchconnection", c.HostURL), strings.NewReader(string(rb)))
 	if err != nil {
 		panic(err)
 	}
