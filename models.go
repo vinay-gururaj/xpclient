@@ -877,15 +877,17 @@ type ProjectSchema struct {
 }
 
 type BatchConnection struct {
-	AwsAccessKeyId     string `json:"awsAccessKeyId,omitempty"`
-	AwsSecretAccessKey string `json:"awsSecretAccessKey,omitempty"`
-	AwsBucket          string `json:"awsBucket,omitempty"`
-	AwsRegion          string `json:"awsRegion,omitempty"`
-	ProjectId          string `json:"projectId,omitempty"`
-	EnvironmentId      string `json:"environmentId,omitempty"`
-	ConnectionId       string `json:"connectionId,omitempty"`
-	ConnectorId        string `json:"connectorId,omitempty"`
-	FileType           string `json:"fileType,omitempty"`
+	AwsAccessKeyId         string `json:"awsAccessKeyId,omitempty"`
+	AwsSecretAccessKey     string `json:"awsSecretAccessKey,omitempty"`
+	AwsBucket              string `json:"awsBucket,omitempty"`
+	AwsRegion              string `json:"awsRegion,omitempty"`
+	ProjectId              string `json:"projectId,omitempty"`
+	EnvironmentId          string `json:"environmentId,omitempty"`
+	ConnectionId           string `json:"connectionId,omitempty"`
+	ConnectorId            string `json:"connectorId,omitempty"`
+	FileType               string `json:"fileType,omitempty"`
+	YamlSourceConnectionId string `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string `json:"YamlSourceConnectorId"`
 }
 
 type KafkaConnection struct {
@@ -900,13 +902,16 @@ type KafkaConnection struct {
 	ConnectionId           string   `json:"connectionId,omitempty"`
 	ConnectorId            string   `json:"connectorId,omitempty"`
 	KafkaConnectionId      string   `json:"kafkaConnectionId,omitempty"`
+	YamlSourceConnectionId string   `json:"YamlSourceConnectionId"`
+	YamlSourceConnectorId  string   `json:"YamlSourceConnectorId"`
 }
 
 type PublicVariable struct {
-	Id           string `json:"id"`
-	ProjectId    string `json:"projectId"`
-	Name         string `json:"name"`
-	Scope        string `json:"scope"`
-	Initialize   string `json:"initialize"`
-	InitialValue string `json:"initialValue"`
+	Id                   string `json:"id,omitempty"`
+	ProjectId            string `json:"projectId,omitempty"`
+	Name                 string `json:"name,omitempty"`
+	Scope                string `json:"scope,omitempty"`
+	Initialize           string `json:"initialize,omitempty"`
+	InitialValue         string `json:"initialValue,omitempty"`
+	YamlSourceVariableId string `json:"yamlSourceVariableId,omitempty"`
 }
