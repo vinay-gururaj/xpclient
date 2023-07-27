@@ -901,3 +901,12 @@ type KafkaConnection struct {
 	ConnectorId            string   `json:"connectorId,omitempty"`
 	KafkaConnectionId      string   `json:"kafkaConnectionId,omitempty"`
 }
+
+type PublicVariable struct {
+	Id           string `json:"id"`
+	ProjectId    string `json:"projectId"`
+	Name         string `json:"name"`
+	Scope        string `json:"scope"`
+	Initialize   string `json:"initialize"`
+	InitialValue string `json:"initialValue"`
+}
