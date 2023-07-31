@@ -749,16 +749,18 @@ type SimpleNode struct {
 	YPosition                    string         `json:"yPosition,omitempty"`
 	GraphId                      string         `json:"graphId,omitempty"`
 	SourceGraphId                string         `json:"sourceGraphId,omitempty"`
-	SourcePrototypeId            string         `json:"sourcePrototypeId,omitempty"`
 	TargetPrototypeId            string         `json:"targetPrototypeId,omitempty"`
 	DataSourceReferenceType      string         `json:"dataSourceReferenceType,omitempty"`
 	DataSourceKeys               []string       `json:"dataSourceKeys,omitempty"`
 	DataDestinationReferenceType string         `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string       `json:"dataDestinationKeys,omitempty"`
 	DataSourceValue              string         `json:"dataSourceValue,omitempty"`
+	DataSourceVariableId         string         `json:"dataSourceVariableId,omitempty"`
+	DataDestinationVariableId    string         `json:"dataDestinationVariableId,omitempty"`
 	DataDestinationValue         string         `json:"dataDestinationValue,omitempty"`
 	StartNode                    bool           `json:"startNode,omitempty"`
 	NodeArguments                []NodeArgument `json:"nodeArguments"`
+	ArgDataVariableId            string         `json:"argDataVariableId"`
 }
 
 type NodeArgument struct {
@@ -793,6 +795,10 @@ type QueueAdapter struct {
 	Action                       string   `json:"action,omitempty"`
 	DataSourceReferenceType      string   `json:"dataSourceReferenceType,omitempty"`
 	DataSourceKeys               []string `json:"dataSourceKeys,omitempty"`
+	DataSourceValue              string   `json:"dataSourceValue,omitempty"`
+	DataSourceVariableId         string   `json:"dataSourceVariableId"`
+	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
 	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
 	GraphId                      string   `json:"graphId,omitempty"`
@@ -812,9 +818,15 @@ type FileAdapter struct {
 	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
 	FileDataReferenceType        string   `json:"fileDataReferenceType,omitempty"`
 	FilenameKeys                 []string `json:"filenameKeys,omitempty"`
+	DataSourceValue              string   `json:"dataSourceValue,omitempty"`
+	DataSourceVariableId         string   `json:"dataSourceVariableId"`
+	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
 	GraphId                      string   `json:"graphId,omitempty"`
 	SubGraphId                   string   `json:"subGraphId,omitempty"`
 	YamlSourcePrototypeId        string   `json:"yamlSourcePrototypeId,omitempty"`
+	FileNameValue                string   `json:"fileNameValue,omitempty"`
+	FileVariableId               string   `json:"fileVariableId,omitempty"`
 }
 
 type QueryParameter struct {
@@ -836,11 +848,14 @@ type DatabaseAdapter struct {
 	ActionParameters             []string         `json:"actionParameters,omitempty"`
 	DataDestinationReferenceType string           `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string         `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string           `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string           `json:"dataDestinationVariableId"`
 	Query                        string           `json:"query,omitempty"`
 	QueryParameters              []QueryParameter `json:"queryParameters,omitempty"`
 	GraphId                      string           `json:"graphId,omitempty"`
 	SubGraphId                   string           `json:"subGraphId,omitempty"`
 	YamlSourcePrototypeId        string           `json:"yamlSourcePrototypeId,omitempty"`
+	ParameterDataVariableId      string           `json:"parameterDataVariableId"`
 }
 
 type WebServiceAdapter struct {
@@ -859,12 +874,21 @@ type WebServiceAdapter struct {
 	ResponseHeaderDataKeys          []string          `json:"responseHeaderDataKeys,omitempty"`
 	HttpStatusCodeDataReferenceType string            `json:"httpStatusCodeDataReferenceType,omitempty"`
 	HttpStatusCodeDataKeys          []string          `json:"httpStatusCodeDataKeys,omitempty"`
+	DataSourceValue                 string            `json:"dataSourceValue,omitempty"`
+	DataSourceVariableId            string            `json:"dataSourceVariableId"`
+	DataDestinationValue            string            `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId       string            `json:"dataDestinationVariableId"`
+	ResponseHeaderValue             string            `json:"responseHeaderValue"`
+	ResponseHeaderVariableId        string            `json:"responseHeaderVariableId"`
+	HttpStatusCodeValue             string            `json:"httpStatusCodeValue"`
+	HttpStatusCodeVariableId        string            `json:"httpStatusCodeVariableId"`
 	UrlSegment                      string            `json:"urlSegment,omitempty"`
-	RawRequest                      bool              `json:"rawRequest"`
-	RawResponse                     bool              `json:"rawResponse"`
 	GraphId                         string            `json:"graphId,omitempty"`
 	SubGraphId                      string            `json:"subGraphId,omitempty"`
+	RawRequest                      bool              `json:"rawRequest"`
+	RawResponse                     bool              `json:"rawResponse"`
 	YamlSourcePrototypeId           string            `json:"yamlSourcePrototypeId,omitempty"`
+	ParameterDataVariableId         string            `json:"parameterDataVariableId"`
 }
 
 type ProjectSchema struct {
@@ -904,6 +928,20 @@ type KafkaConnection struct {
 	KafkaConnectionId      string   `json:"kafkaConnectionId,omitempty"`
 	YamlSourceConnectionId string   `json:"YamlSourceConnectionId"`
 	YamlSourceConnectorId  string   `json:"YamlSourceConnectorId"`
+}
+
+type KafkaAdapter struct {
+	Name                    string   `json:"name,omitempty"`
+	Id                      string   `json:"id,omitempty"`
+	ProjectId               string   `json:"projectId,omitempty"`
+	ConnectionId            string   `json:"connectionId,omitempty"`
+	DataSourceReferenceType string   `json:"dataSourceReferenceType,omitempty"`
+	DataSourceKeys          []string `json:"dataSourceKeys,omitempty"`
+	DataSourceValue         string   `json:"dataSourceValue,omitempty"`
+	DataSourceVariableId    string   `json:"dataSourceVariableId"`
+	GraphId                 string   `json:"graphId,omitempty"`
+	SubGraphId              string   `json:"subGraphId,omitempty"`
+	YamlSourcePrototypeId   string   `json:"yamlSourcePrototypeId,omitempty"`
 }
 
 type PublicVariable struct {
