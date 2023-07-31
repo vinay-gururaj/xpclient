@@ -953,3 +953,96 @@ type PublicVariable struct {
 	InitialValue         string `json:"initialValue,omitempty"`
 	YamlSourceVariableId string `json:"yamlSourceVariableId,omitempty"`
 }
+
+type QueueListener struct {
+	Id                           string   `json:"id,omitempty"`
+	ProjectId                    string   `json:"projectId,omitempty"`
+	ConnectionId                 string   `json:"connectionId,omitempty"`
+	GraphId                      string   `json:"graphId,omitempty"`
+	ListenInterval               string   `json:"listenInterval,omitempty"`
+	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
+	ListenerType                 string   `json:"listenerType,omitempty"`
+}
+
+type KafkaListener struct {
+	Id                           string   `json:"id,omitempty"`
+	ProjectId                    string   `json:"projectId,omitempty"`
+	ConnectionId                 string   `json:"connectionId,omitempty"`
+	GraphId                      string   `json:"graphId,omitempty"`
+	NumberOfConsumers            string   `json:"numberOfConsumers,omitempty"`
+	Offset                       string   `json:"offset,omitempty"`
+	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
+	ListenerType                 string   `json:"listenerType,omitempty"`
+}
+
+type DatabaseListener struct {
+	Id                           string   `json:"id,omitempty"`
+	ProjectId                    string   `json:"projectId,omitempty"`
+	ConnectionId                 string   `json:"connectionId,omitempty"`
+	GraphId                      string   `json:"graphId,omitempty"`
+	ListenInterval               string   `json:"listenInterval,omitempty"`
+	ListenQuery                  string   `json:"listenQuery,omitempty"`
+	UpdateQuery                  string   `json:"updateQuery,omitempty"`
+	MaxRecords                   string   `json:"maxRecords,omitempty"`
+	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
+	ListenerType                 string   `json:"listenerType,omitempty"`
+}
+
+type APIListener struct {
+	Id                           string            `json:"id,omitempty"`
+	ProjectId                    string            `json:"projectId,omitempty"`
+	ConnectionId                 string            `json:"connectionId,omitempty"`
+	GraphId                      string            `json:"graphId,omitempty"`
+	ApiType                      string            `json:"apiType,omitempty"`
+	ListenInterval               string            `json:"listenInterval,omitempty"`
+	ApiVersion                   string            `json:"apiVersion,omitempty"`
+	MaxRecords                   string            `json:"maxRecords,omitempty"`
+	DataDestinationReferenceType string            `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string          `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string            `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string            `json:"dataDestinationVariableId"`
+	ListenerType                 string            `json:"listenerType,omitempty"`
+	Events                       Events            `json:"events"`
+	CookieDomain                 DomainInformation `json:"cookieDomain"`
+	DoNotTrackDetails            DoNotTrackDetails `json:"doNotTrackDetails"`
+}
+
+type Events struct {
+	TrackViews       EventDetail `json:"trackViews"`
+	TrackClicks      EventDetail `json:"trackClicks"`
+	TrackForms       EventDetail `json:"trackForms"`
+	TrackDropdowns   EventDetail `json:"trackDropdowns"`
+	TrackButtons     EventDetail `json:"trackButtons"`
+	TrackBlurs       EventDetail `json:"trackBlurs"`
+	TrackDivs        EventDetail `json:"trackDivs"`
+	TrackGeo         EventDetail `json:"trackGeo"`
+	TrackFingerprint EventDetail `json:"trackFingerprint"`
+}
+
+type EventDetail struct {
+	Track      bool `json:"track,omitempty"`
+	NoConflict bool `json:"noConflict,omitempty"`
+}
+
+type DomainInformation struct {
+	Enabled bool     `json:"enabled,omitempty"`
+	Domain  []string `json:"domain,omitempty"`
+}
+
+type DoNotTrackDetails struct {
+	Enabled   bool     `json:"enabled,omitempty"`
+	Whitelist bool     `json:"whitelist,omitempty"`
+	Names     []string `json:"names"`
+	Ids       []string `json:"ids"`
+	Classes   []string `json:"classes"`
+	Cookies   []string `json:"cookies"`
+}
