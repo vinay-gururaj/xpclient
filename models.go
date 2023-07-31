@@ -749,6 +749,7 @@ type SimpleNode struct {
 	YPosition                    string         `json:"yPosition,omitempty"`
 	GraphId                      string         `json:"graphId,omitempty"`
 	SourceGraphId                string         `json:"sourceGraphId,omitempty"`
+	SourcePrototypeId            string         `json:"sourcePrototypeId,omitempty"`
 	TargetPrototypeId            string         `json:"targetPrototypeId,omitempty"`
 	DataSourceReferenceType      string         `json:"dataSourceReferenceType,omitempty"`
 	DataSourceKeys               []string       `json:"dataSourceKeys,omitempty"`
