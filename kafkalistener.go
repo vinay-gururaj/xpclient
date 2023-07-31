@@ -9,7 +9,7 @@ import (
 )
 
 // CreateKafkaListener - Create new Kafka Connection
-func (c *Client) CreateKafkaListener(ctx context.Context, kafkaListener KafkaListener) (kafkaListenerResponse KafkaListener, err error) {
+func (c *Client) CreateKafkaListener(ctx context.Context, kafkaListener KafkaListener) (kafkaListenerResponse string, err error) {
 	rb, err := json.Marshal(kafkaListener)
 	if err != nil {
 		panic(err)
