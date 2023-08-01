@@ -960,7 +960,7 @@ type QueueListener struct {
 	ProjectId                    string   `json:"projectId,omitempty"`
 	ConnectionId                 string   `json:"connectionId,omitempty"`
 	GraphId                      string   `json:"graphId,omitempty"`
-	ListenInterval               string   `json:"listenInterval,omitempty"`
+	ListenInterval               int      `json:"listenInterval,omitempty"`
 	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
 	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
@@ -990,7 +990,7 @@ type DatabaseListener struct {
 	ListenInterval               string   `json:"listenInterval,omitempty"`
 	ListenQuery                  string   `json:"listenQuery,omitempty"`
 	UpdateQuery                  string   `json:"updateQuery,omitempty"`
-	MaxRecords                   string   `json:"maxRecords,omitempty"`
+	MaxRecords                   int      `json:"maxRecords,omitempty"`
 	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
 	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
@@ -1005,8 +1005,7 @@ type APIListener struct {
 	GraphId                      string            `json:"graphId,omitempty"`
 	ApiType                      string            `json:"apiType,omitempty"`
 	ListenInterval               string            `json:"listenInterval,omitempty"`
-	ApiVersion                   string            `json:"apiVersion,omitempty"`
-	MaxRecords                   string            `json:"maxRecords,omitempty"`
+	ApiVersion                   int               `json:"apiVersion,omitempty"`
 	DataDestinationReferenceType string            `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string          `json:"dataDestinationKeys,omitempty"`
 	DataDestinationValue         string            `json:"dataDestinationValue,omitempty"`
