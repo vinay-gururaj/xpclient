@@ -734,6 +734,8 @@ type GraphParameter struct {
 	ParameterDataKeys          []string `json:"parameterDataKeys"`
 	ParameterDataReferenceType string   `json:"parameterDataReferenceType"`
 	ParameterDataValue         string   `json:"parameterDataValue"`
+	ParameterValue             string   `json:"parameterValue,omitempty"`
+	ParameterVariableId        string   `json:"parameterVariableId,omitempty"`
 	ParameterName              string   `json:"parameterName"`
 	GraphId                    string   `json:"graphId"`
 }
