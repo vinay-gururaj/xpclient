@@ -820,8 +820,10 @@ type FileAdapter struct {
 	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
 	FileDataReferenceType        string   `json:"fileDataReferenceType,omitempty"`
 	FilenameKeys                 []string `json:"filenameKeys,omitempty"`
+	FileDataValue                string   `json:"fileDataValue,omitempty"`
+	FileDataVariableId           string   `json:"fileDataVariableId,omitempty"`
 	DataSourceValue              string   `json:"dataSourceValue,omitempty"`
-	DataSourceVariableId         string   `json:"dataSourceVariableId"`
+	DataSourceVariableId         string   `json:"dataSourceVariableId,omitempty"`
 	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
 	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
 	GraphId                      string   `json:"graphId,omitempty"`
