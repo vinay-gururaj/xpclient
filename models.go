@@ -835,6 +835,7 @@ type QueryParameter struct {
 	ParameterDataKeys          []string `json:"parameterDataKeys"`
 	ParameterDataReferenceType string   `json:"parameterDataReferenceType"`
 	ParameterDataValue         string   `json:"parameterDataValue"`
+	ParameterDataVariableId    string   `json:"parameterDataVariableId,omitempty"`
 	ParameterName              string   `json:"parameterName"`
 	GraphId                    string   `json:"graphId"`
 }
