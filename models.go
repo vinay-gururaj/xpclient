@@ -769,6 +769,7 @@ type NodeArgument struct {
 	ArgDataKeys          []string `json:"argDataKeys"`
 	ArgDataReferenceType string   `json:"argDataReferenceType"`
 	ArgDataValue         string   `json:"argDataValue"`
+	ArgDataVariableId    string   `json:"argDataVariableId"`
 	ArgName              string   `json:"argName"`
 	NodeId               string   `json:"nodeId"`
 }
