@@ -1051,3 +1051,19 @@ type DoNotTrackDetails struct {
 	Classes   []string `json:"classes"`
 	Cookies   []string `json:"cookies"`
 }
+
+type IdentifierType struct {
+	Id          string `json:"id"`
+	Name        string `json:"name"`
+	ProjectId   string `json:"projectId"`
+	Description string `json:"description"`
+}
+
+type InteractionType struct {
+	Id              string `json:"id"`
+	Name            string `json:"name"`
+	ProjectId       string `json:"project_id"`
+	Description     string `json:"description"`
+	Channel         string `json:"channel"`
+	EngagementScore string `json:"engagementScore"`
+}
