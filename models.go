@@ -1062,7 +1062,7 @@ type IdentifierType struct {
 type InteractionType struct {
 	Id              string `json:"id"`
 	Name            string `json:"name"`
-	ProjectId       string `json:"project_id"`
+	ProjectId       string `json:"projectId"`
 	Description     string `json:"description"`
 	Channel         string `json:"channel"`
 	EngagementScore string `json:"engagementScore"`
