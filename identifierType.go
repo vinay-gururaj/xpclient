@@ -34,32 +34,6 @@ func (c *Client) CreateIdentifierType(ctx context.Context, identifierType Identi
 	return response, nil
 }
 
-// UpdateIdentifierType - Updates Identifier Type
-func (c *Client) UpdateIdentifierType(ctx context.Context, identifierType IdentifierType) (identifierTypeId string, err error) {
-	rb, err := json.Marshal(identifierType)
-	if err != nil {
-		panic(err)
-	}
-
-	req, err := http.NewRequest("PUT", fmt.Sprintf("%s/identifiertype", c.HostURL), strings.NewReader(string(rb)))
-	if err != nil {
-		panic(err)
-	}
-
-	body, err := c.doRequest(req)
-
-	if err != nil {
-		panic(err)
-	}
-
-	response := identifierTypeId
-	err = json.Unmarshal(body, &response)
-	if err != nil {
-		panic(err)
-	}
-	return response, nil
-}
-
 // DeleteIdentifierType - Delete Identifier Type
 func (c *Client) DeleteIdentifierType(ctx context.Context, identifierType IdentifierType) (identifierTypeId string, err error) {
 	rb, err := json.Marshal(identifierType)
