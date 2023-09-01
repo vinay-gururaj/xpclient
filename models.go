@@ -1067,3 +1067,12 @@ type InteractionType struct {
 	Channel         string `json:"channel"`
 	EngagementScore string `json:"engagementScore"`
 }
+
+type ConditionalGraph struct {
+	Name          string `json:"name,omitempty"`
+	Id            string `json:"id,omitempty"`
+	ProjectId     string `json:"projectId,omitempty"`
+	Args          string `json:"args,omitempty"`
+	Value         string `json:"value,omitempty"`
+	OperationType string `json:"operationType,omitempty"`
+}
