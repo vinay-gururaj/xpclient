@@ -1076,3 +1076,11 @@ type ConditionalGraph struct {
 	Value         string `json:"value,omitempty"`
 	OperationType string `json:"operationType,omitempty"`
 }
+
+type JourneyStep struct {
+	Id           string `json:"id"`
+	Name         string `json:"name"`
+	ProjectId    string `json:"project_id"`
+	Outcome      string `json:"outcome,omitempty"`
+	OutcomeLabel string `json:"outcomelabel,omitempty"`
+}
