@@ -1078,9 +1078,27 @@ type ConditionalGraph struct {
 }
 
 type JourneyStep struct {
-	Id           string `json:"id"`
-	Name         string `json:"name"`
-	ProjectId    string `json:"project_id"`
-	Outcome      string `json:"outcome,omitempty"`
-	OutcomeLabel string `json:"outcomelabel,omitempty"`
+	Id              string            `json:"id"`
+	Name            string            `json:"name"`
+	ProjectId       string            `json:"project_id"`
+	Outcome         string            `json:"outcome,omitempty"`
+	OutcomeLabel    string            `json:"outcomelabel,omitempty"`
+	Description     string            `json:"description"`
+	Parameters      map[string]string `json:"parameters"`
+	JourneyStepType string            `json:"journeyStepType"`
+}
+
+type ColumnarTable struct {
+	Name      string   `json:"name,omitempty"`
+	Id        string   `json:"id,omitempty"`
+	ProjectId string   `json:"projectId,omitempty"`
+	Columns   []string `json:"columns"`
+	Rows      struct {
+		RuleSources        []string `json:"ruleSources"`
+		ResultDestinations []string `json:"resultDestinations"`
+	} `json:"rows"`
+	Cells struct {
+		Rules   []map[string]string `json:"rules"`
+		Results []string            `json:"results"`
+	} `json:"cells"`
 }
