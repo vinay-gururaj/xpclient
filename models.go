@@ -1102,3 +1102,11 @@ type ColumnarTable struct {
 		Results []string            `json:"results"`
 	} `json:"cells"`
 }
+
+type JourneyMap struct {
+	Name                string `json:"name,omitempty"`
+	Id                  string `json:"id,omitempty"`
+	ProjectId           string `json:"projectId,omitempty"`
+	YamlSourceJourneyId string `json:"yamlSourceJourneyId,omitempty"`
+	JourneyId           string `json:"graphId,omitempty"`
+}
