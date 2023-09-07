@@ -1110,3 +1110,69 @@ type JourneyMap struct {
 	YamlSourceJourneyId string `json:"yamlSourceJourneyId,omitempty"`
 	JourneyId           string `json:"graphId,omitempty"`
 }
+
+type TwoDTable struct {
+	TwoDTableRow    []TwoDTableFields        `json:"twoDTableRow,omitempty"`
+	TwoDTableColumn []TwoDTableFields        `json:"twoDTableColumn,omitempty"`
+	TwoDTableCells  [][]TwoDTableFieldsCells `json:"twoDTableCells,omitempty"`
+	Name            string                   `json:"name,omitempty"`
+	Id              string                   `json:"id,omitempty"`
+	ProjectId       string                   `json:"projectId,omitempty"`
+	ConnectionId    string                   `json:"connectionId,omitempty"`
+}
+
+type TwoDTableFields struct {
+	Condition   string `json:"condition,omitempty"`
+	Description string `json:"description,omitempty"`
+	Mode        string `json:"mode,omitempty"`
+}
+
+type TwoDTableFieldsCells struct {
+	DataReferenceType string   `json:"dataReferenceType,omitempty"`
+	DataKeys          []string `json:"dataKeys,omitempty"`
+	Datavalues        string   `json:"datavalues,omitempty"`
+	DataVariableId    string   `json:"dataVariableId,omitempty"`
+}
+
+type DecisionTree struct {
+	Name      string   `json:"name,omitempty"`
+	Id        string   `json:"id,omitempty"`
+	ProjectId string   `json:"projectId,omitempty"`
+	Branches  Branches `json:"branches,omitempty"`
+}
+
+type Branches struct {
+	Values   []string   `json:"values,omitempty"`
+	Children []Children `json:"children,omitempty"`
+}
+
+type Children struct {
+	Condition   string                 `json:"condition,omitempty"`
+	Description string                 `json:"description,omitempty"`
+	Mode        string                 `json:"mode,omitempty"`
+	Children    []Children             `json:"children,omitempty"`
+	Result      []TwoDTableFieldsCells `json:"result,omitempty"`
+}
+
+type Metrics struct {
+	Name               string   `json:"name,omitempty"`
+	Id                 string   `json:"id,omitempty"`
+	ProjectId          string   `json:"projectId,omitempty"`
+	MetricType         string   `json:"type,omitempty"`
+	Description        string   `json:"description,omitempty"`
+	Goal               string   `json:"goal,omitempty"`
+	CurrencyMultiplier string   `json:"currencymultiplier,omitempty"`
+	CurrencyType       string   `json:"currencyType,omitempty"`
+	CompoundType       string   `json:"compoundType,omitempty"`
+	LHS                []string `json:"lhs,omitempty"`
+	RHS                []string `json:"rhs,omitempty"`
+	LHSWeights         []Alias  `json:"lhsWeights,omitempty"`
+	RHSWeights         []Alias  `json:"rhsWeights,omitempty"`
+	Alias              []Alias  `json:"alias,omitempty"`
+	Operation          string   `json:"operation,omitempty"`
+}
+
+type Alias struct {
+	Id       string `json:"id,omitempty"`
+	Variable string `json:"variable,omitempty"`
+}
