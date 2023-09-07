@@ -1089,18 +1089,27 @@ type JourneyStep struct {
 }
 
 type ColumnarTable struct {
-	Name      string   `json:"name,omitempty"`
-	Id        string   `json:"id,omitempty"`
-	ProjectId string   `json:"projectId,omitempty"`
-	Columns   []string `json:"columns"`
-	Rows      struct {
-		RuleSources        []string `json:"ruleSources"`
-		ResultDestinations []string `json:"resultDestinations"`
-	} `json:"rows"`
-	Cells struct {
-		Rules   []map[string]string `json:"rules"`
-		Results []string            `json:"results"`
-	} `json:"cells"`
+	Name                   string                        `json:"name,omitempty"`
+	Id                     string                        `json:"id,omitempty"`
+	ProjectId              string                        `json:"projectId,omitempty"`
+	Columns                []string                      `json:"columns"`
+	RuleSourcesRows        []string                      `json:"ruleSources"`
+	ResultDestinationsRows []string                      `json:"resultDestinations"`
+	RulesCells             [][]ColumnarTableFieldsRules  `json:"rules"`
+	ResultsCells           [][]ResultsCellsColumnarTable `json:"results"`
+}
+
+type ColumnarTableFieldsRules struct {
+	Condition   string `json:"condition,omitempty"`
+	Description string `json:"description,omitempty"`
+	Mode        string `json:"mode,omitempty"`
+}
+
+type ResultsCellsColumnarTable struct {
+	CellDataKeys          []string `json:"cellDataKeys"`
+	CellDataReferenceType string   `json:"cellDataReferenceType"`
+	CellDataValue         string   `json:"cellDataValue"`
+	CellDataVariableId    string   `json:"cellId"`
 }
 
 type JourneyMap struct {
