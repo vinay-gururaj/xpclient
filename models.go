@@ -1075,6 +1075,7 @@ type ConditionalGraph struct {
 	Args          string `json:"args,omitempty"`
 	Value         string `json:"value,omitempty"`
 	OperationType string `json:"operationType,omitempty"`
+	Operator      string `json:"operator,omitempty"`
 }
 
 type JourneyStep struct {
