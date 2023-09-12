@@ -1186,3 +1186,29 @@ type Alias struct {
 	Id       string `json:"id,omitempty"`
 	Variable string `json:"variable,omitempty"`
 }
+
+type BatchListener struct {
+	Id                           string     `json:"id,omitempty"`
+	ProjectId                    string     `json:"projectId,omitempty"`
+	ConnectionId                 string     `json:"connectionId,omitempty"`
+	GraphId                      string     `json:"graphId,omitempty"`
+	FileFormat                   string     `json:"fileFormat,omitempty"`
+	IntervalUnit                 string     `json:"intervalUnit,omitempty"`
+	IntervalFrequency            int        `json:"intervalFrequency,omitempty"`
+	Encryption                   Encryption `json:"encryption,omitempty"`
+	DataDestinationReferenceType string     `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string   `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string     `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string     `json:"dataDestinationVariableId"`
+	Directory                    string     `json:"directory,omitempty"`
+	PathPatternRegex             string     `json:"pathPatternRegex,omitempty"`
+	Schema                       string     `json:"schema,omitempty"`
+	ListenerType                 string     `json:"listenerType,omitempty"`
+}
+
+type Encryption struct {
+	CompressionType string `json:"compressionType"`
+	EncryptionType  string `json:"encryptionType"`
+	EncryptionKey   string `json:"encryptionKey"`
+	Passphrase      string `json:"passphrase"`
+}
