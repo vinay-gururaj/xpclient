@@ -1101,8 +1101,9 @@ type ColumnarTable struct {
 }
 
 type ArrayRules struct {
-	Result []ResultsCellsColumnarTable
+	Rule []ColumnarTableFieldsRules
 }
+
 type ArrayResults struct {
 	Result []ResultsCellsColumnarTable
 }
