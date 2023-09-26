@@ -1069,13 +1069,17 @@ type InteractionType struct {
 }
 
 type ConditionalGraph struct {
-	Name          string `json:"name,omitempty"`
-	Id            string `json:"id,omitempty"`
-	ProjectId     string `json:"projectId,omitempty"`
-	Args          string `json:"args,omitempty"`
-	Value         string `json:"value,omitempty"`
-	OperationType string `json:"operationType,omitempty"`
-	Operator      string `json:"operator,omitempty"`
+	Name       string            `json:"name,omitempty"`
+	Id         string            `json:"id,omitempty"`
+	ProjectId  string            `json:"projectId,omitempty"`
+	Conditions []ConditionalArgs `json:"conditionalargs,omitempty"`
+	Operator   string            `json:"operator,omitempty"`
+}
+
+type ConditionalArgs struct {
+	Arg       string `json:"arg,omitempty"`
+	Value     string `json:"value,omitempty"`
+	Operation string `json:"operation,omitempty"`
 }
 
 type JourneyStep struct {
