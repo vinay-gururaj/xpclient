@@ -965,7 +965,7 @@ type QueueListener struct {
 	ProjectId                    string   `json:"projectId,omitempty"`
 	ConnectionId                 string   `json:"connectionId,omitempty"`
 	GraphId                      string   `json:"graphId,omitempty"`
-	ListenInterval               int      `json:"listenInterval,omitempty"`
+	ListenInterval               string   `json:"listenInterval,omitempty"`
 	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
 	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
 	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
