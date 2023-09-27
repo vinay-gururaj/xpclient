@@ -1004,21 +1004,21 @@ type DatabaseListener struct {
 }
 
 type APIListener struct {
-	Id                           string            `json:"id,omitempty"`
-	ProjectId                    string            `json:"projectId,omitempty"`
-	ConnectionId                 string            `json:"connectionId,omitempty"`
-	GraphId                      string            `json:"graphId,omitempty"`
-	ApiType                      string            `json:"apiType,omitempty"`
-	ListenInterval               string            `json:"listenInterval,omitempty"`
-	ApiVersion                   int               `json:"apiVersion,omitempty"`
-	DataDestinationReferenceType string            `json:"dataDestinationReferenceType,omitempty"`
-	DataDestinationKeys          []string          `json:"dataDestinationKeys,omitempty"`
-	DataDestinationValue         string            `json:"dataDestinationValue,omitempty"`
-	DataDestinationVariableId    string            `json:"dataDestinationVariableId"`
-	ListenerType                 string            `json:"listenerType,omitempty"`
-	Events                       Events            `json:"events"`
-	CookieDomain                 DomainInformation `json:"cookieDomain"`
-	DoNotTrackDetails            DoNotTrackDetails `json:"doNotTrackDetails"`
+	Id                           string   `json:"id,omitempty"`
+	ProjectId                    string   `json:"projectId,omitempty"`
+	ConnectionId                 string   `json:"connectionId,omitempty"`
+	GraphId                      string   `json:"graphId,omitempty"`
+	ApiType                      string   `json:"apiType,omitempty"`
+	ListenInterval               string   `json:"listenInterval,omitempty"`
+	ApiVersion                   int      `json:"apiVersion,omitempty"`
+	MaxRecords                   string   `json:"maxRecords,omitempty"`
+	DataDestinationReferenceType string   `json:"dataDestinationReferenceType,omitempty"`
+	DataDestinationKeys          []string `json:"dataDestinationKeys,omitempty"`
+	DataDestinationValue         string   `json:"dataDestinationValue,omitempty"`
+	DataDestinationVariableId    string   `json:"dataDestinationVariableId"`
+	ListenerType                 string   `json:"listenerType,omitempty"`
+	Events                       Events   `json:"events"`
+	Options                      Options  `json:"options"`
 }
 
 type Events struct {
@@ -1031,6 +1031,11 @@ type Events struct {
 	TrackDivs        EventDetail `json:"trackDivs"`
 	TrackGeo         EventDetail `json:"trackGeo"`
 	TrackFingerprint EventDetail `json:"trackFingerprint"`
+}
+
+type Options struct {
+	SpecifyCookieDomain DomainInformation `json:"specifyCookieDomain"`
+	DoNotTrack          DoNotTrackDetails `json:"DoNotTrack"`
 }
 
 type EventDetail struct {
