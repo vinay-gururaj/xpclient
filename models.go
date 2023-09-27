@@ -1035,7 +1035,7 @@ type Events struct {
 
 type Options struct {
 	SpecifyCookieDomain DomainInformation `json:"specifyCookieDomain"`
-	DoNotTrack          DoNotTrackDetails `json:"DoNotTrack"`
+	DoNotTrack          DoNotTrackDetails `json:"doNotTrack"`
 }
 
 type EventDetail struct {
