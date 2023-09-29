@@ -1138,19 +1138,22 @@ type JourneyMap struct {
 }
 
 type TwoDTable struct {
-	TwoDTableRow    []TwoDTableFields        `json:"twoDTableRow,omitempty"`
-	TwoDTableColumn []TwoDTableFields        `json:"twoDTableColumn,omitempty"`
-	TwoDTableCells  [][]TwoDTableFieldsCells `json:"twoDTableCells,omitempty"`
-	Name            string                   `json:"name,omitempty"`
-	Id              string                   `json:"id,omitempty"`
-	ProjectId       string                   `json:"projectId,omitempty"`
-	ConnectionId    string                   `json:"connectionId,omitempty"`
+	TwoDTableRow    []TwoDTableFields `json:"twoDTableRow,omitempty"`
+	TwoDTableColumn []TwoDTableFields `json:"twoDTableColumn,omitempty"`
+	TwoDTableCells  []CellsArray      `json:"twoDTableCells,omitempty"`
+	Name            string            `json:"name,omitempty"`
+	Id              string            `json:"id,omitempty"`
+	ProjectId       string            `json:"projectId,omitempty"`
+	ConnectionId    string            `json:"connectionId,omitempty"`
 }
 
 type TwoDTableFields struct {
 	Condition   string `json:"condition,omitempty"`
 	Description string `json:"description,omitempty"`
 	Mode        string `json:"mode,omitempty"`
+}
+type CellsArray struct {
+	CellsArrayVariable []TwoDTableFieldsCells `json:"cellsArrayVariable,omitempty"`
 }
 
 type TwoDTableFieldsCells struct {
